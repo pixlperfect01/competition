@@ -106,6 +106,8 @@ function loop(){
   if(Math.random<.003){
     blocks.push(new block(Math.trunc(Math.random()*c.width-20), 0));
   }
+  p1.update();
+  p2.update();
   if(keys.up)
     p1.jump();
   if(keys.w)
@@ -118,8 +120,6 @@ function loop(){
     p1.right();
   if(keys.d)
     p2.right();
-  p1.update();
-  p2.update();
   p1.show();
   p2.show();
   for(var i=0;i<blocks.length;i++){
