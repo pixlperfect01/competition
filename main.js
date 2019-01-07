@@ -136,7 +136,7 @@ function loop(){
     blocks[i].show();
   }
   for(var i=0;i<blocks.length;i++){
-    if(blocks[i].pos.y<c.height)
+    if(blocks[i].pos.y>c.height)
       blocks.splice(i, 1);
   }
   window.requestAnimationFrame(loop);
