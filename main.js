@@ -75,7 +75,7 @@ function Vector(x, y){
   }
 }
 setTimeout(setup,50);
-var c,ctx,p1,p2,grav;
+var c,ctx,p1,p2,grav,blocks;
 function setup(){
   c=document.getElementById("c");
   c.width=window.innerWidth;
@@ -85,15 +85,23 @@ function setup(){
   ctx=c.getContext("2d");
   p1=new Player(0, c.height-20, "#FF0000");
   p1=new Player(c.width-20, c.height-20, "#00FF00");
+  blocks=[];
   grav=createVector(0, 0.2);
   loop();
 }
 function loop(){
   ctx.clearRect(0, 0, c.width, c.height);
+  if(Math.random<.003){
+    blocks.push(new Block(Math.trunc(Math.random()*c.width-20), 0));
+  }
   if(keys.up)
     p1.jump();
   if(keys.w)
     p2.jump();
+  for(Block b:blocks){
+    b.fall();
+    b.show();
+  }
   p1.update();
   p2.update();
   p1.show();
