@@ -92,7 +92,7 @@ function setup(){
 function loop(){
   ctx.clearRect(0, 0, c.width, c.height);
   if(Math.random<.003){
-    blocks.push(new Block(Math.trunc(Math.random()*c.width-20), 0));
+    blocks.push(new block(Math.trunc(Math.random()*c.width-20), 0));
   }
   if(keys.up)
     p1.jump();
