@@ -18,6 +18,9 @@ function Player(x, y, col){
     if(this.pos.x<c.width-20)
       this.pos.x++;
   }
+  this.collisionTestBlocks=function(b){
+    this.dead=(this.pos.x-20>b.pos.x&&this.pos.x<b.pos.x+20&&this.pos.y-20<b.pos.y&&this.pos.y>b.pos.y+20);
+  }
   this.applyForce=function(f){
     this.acc.add(f);
   }
@@ -120,11 +123,21 @@ function loop(){
     p1.right();
   if(keys.d)
     p2.right();
-  p1.show();
-  p2.show();
+  for(var i=0;i<blocks.length;i++){
+    p1.collisionTestBlocks(blocks[i]);
+    p2.collisionTestBlocks(blocks[i]);
+  }
+  if(!p1.dead)
+    p1.show();
+  if(!p2.dead)
+    p2.show();
   for(var i=0;i<blocks.length;i++){
     blocks[i].fall();
     blocks[i].show();
+  }
+  for(var i=0;i<blocks.length;i++){
+    if(blocks[i].pos.y<c.height)
+      blocks.splice(i, 1);
   }
   window.requestAnimationFrame(loop);
 }
