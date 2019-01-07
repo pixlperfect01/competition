@@ -92,7 +92,7 @@ function setup(){
   c.style.height=window.innerHeight;
   ctx=c.getContext("2d");
   p1=new Player(0, c.height-20, "#FF0000");
-  p1=new Player(c.width-20, c.height-20, "#00FF00");
+  p2=new Player(c.width-20, c.height-20, "#00FF00");
   blocks=[];
   grav=createVector(0, 0.2);
   loop();
