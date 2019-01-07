@@ -98,14 +98,14 @@ function loop(){
     p1.jump();
   if(keys.w)
     p2.jump();
-  for(Block b:blocks){
-    b.fall();
-    b.show();
-  }
   p1.update();
   p2.update();
   p1.show();
   p2.show();
+  for(var i=0;i<blocks.length;i++){
+    blocks[i].fall();
+    blocks[i].show();
+  }
   window.requestAnimationFrame(loop);
 }
 var keys = { 
