@@ -10,6 +10,14 @@ function Player(x, y, col){
       this.applyForce(createVector(0, 5));
     }
   }
+  this.left=function(){
+    if(this.pos.x>0)
+      this.pos.x--;
+  }
+  this.right=function(){
+    if(this.pos.x<c.width-20)
+      this.pos.x++;
+  }
   this.applyForce=function(f){
     this.acc.add(f);
   }
@@ -98,6 +106,14 @@ function loop(){
     p1.jump();
   if(keys.w)
     p2.jump();
+  if(keys.left)
+    p1.left();
+  if(keys.a)
+    p2.left();
+  if(keys.right)
+    p1.right();
+  if(keys.d)
+    p2.right();
   p1.update();
   p2.update();
   p1.show();
