@@ -106,7 +106,7 @@ function setup(){
 }
 function loop(){
   ctx.clearRect(0, 0, c.width, c.height);
-  if(Math.random()<.003){
+  if(Math.random()<.01){
     blocks.push(new block(Math.trunc(Math.random()*c.width-20), 0));
   }
   p1.update();
