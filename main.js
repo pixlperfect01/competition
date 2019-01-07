@@ -26,9 +26,9 @@ function Player(x, y, col){
     this.pos.add(this.vel);
     this.vel.add(this.acc);
     this.acc.mult(0);
-    if(this.pos.y<20){
+    if(this.pos.y>c.height-20){
       this.vel.y=0;
-      this.pos.y=20;
+      this.pos.y=c.height-20;
     }
   }
   this.show=function(){
