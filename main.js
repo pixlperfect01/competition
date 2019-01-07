@@ -7,7 +7,7 @@ function Player(x, y, col){
   this.height=20;
   this.jump=function(){
     if(this.vel.y===0){
-      this.applyForce(0, 5);
+      this.applyForce(createVector(0, 5));
     }
   }
   this.applyForce=function(f){
