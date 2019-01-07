@@ -10,7 +10,7 @@ function Player(x, y, col){
       this.applyForce(0, 5);
     }
   }
-  this.applyForce(f){
+  this.applyForce=function(f){
     this.acc.add(f);
   }
   this.update=function(){
@@ -24,6 +24,13 @@ function Player(x, y, col){
     ctx.fillRect(this.pos.x, this.pos.y, this.width, this.height);
   }
 }
+/*
+function block(x, y){
+  this.pos=createVector(x, y);
+  this.vel=createVector(0, 0);
+  this.acc=createVector(0, 0);
+}
+*/
 function createVector(x_, y_){
   return new Vector(x_, y_);
 }
