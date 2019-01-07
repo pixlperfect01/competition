@@ -12,11 +12,11 @@ function Player(x, y, col){
   }
   this.left=function(){
     if(this.pos.x>0)
-      this.pos.x--;
+      this.pos.x-=1.5;
   }
   this.right=function(){
     if(this.pos.x<c.width-20)
-      this.pos.x++;
+      this.pos.x+=1.5;
   }
   this.collisionTestBlocks=function(b){
     this.dead=(this.pos.x-20>b.pos.x&&this.pos.x<b.pos.x+20&&this.pos.y-20<b.pos.y&&this.pos.y>b.pos.y+20);
