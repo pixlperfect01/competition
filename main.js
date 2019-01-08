@@ -5,6 +5,7 @@ function Player(x, y, col){
   this.col=col;
   this.width=20;
   this.height=20;
+  this.dead=false;
   this.jump=function(){
     if(this.vel.y===0){
       this.applyForce(createVector(0, -5));
@@ -19,7 +20,8 @@ function Player(x, y, col){
       this.pos.x+=1.5;
   }
   this.collisionTestBlocks=function(b){
-    this.dead=(this.pos.x-20>b.pos.x&&this.pos.x<b.pos.x+20&&this.pos.y-20<b.pos.y&&this.pos.y>b.pos.y+20);
+    if(this.pos.x-20>b.pos.x&&this.pos.x<b.pos.x+20&&this.pos.y-20<b.pos.y&&this.pos.y>b.pos.y+20)
+      this.dead=true;
   }
   this.applyForce=function(f){
     this.acc.add(f);
@@ -112,7 +114,7 @@ function setup(){
 }
 function loop(){
   ctx.clearRect(0, 0, c.width, c.height);
-  if(Math.random()<.01){
+  if(Math.random()<.05){
     blocks.push(new block(Math.trunc(Math.random()*c.width-20), 0));
   }
   p1.update();
