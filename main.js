@@ -56,8 +56,8 @@ function block(x, y){
     this.acc.mult(0);
   }
   this.show=function(){
-    ctx.filStyle="8c8c8c";
-    ctx.fillRect(0, 0, 20, 20);
+    ctx.filStyle="#8c8c8c";
+    ctx.fillRect(this.pos.x, this.pos.y, 20, 20);
   }
 }
 
