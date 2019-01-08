@@ -109,7 +109,7 @@ function setup(){
   p2=new Player(c.width-20, c.height-20, "#0000FF");
   blocks=[];
   grav=createVector(0, 0.2);
-  grav1=createVector(0, 0.075);
+  grav1=createVector(0, 0.1);
   loop();
 }
 function loop(){
