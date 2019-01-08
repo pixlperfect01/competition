@@ -50,6 +50,11 @@ function block(x, y){
   this.applyForce=function(f){
     this.acc.add(f);
   }
+  this.update=function(){
+    this.pos.add(this.vel);
+    this.vel.add(this.acc);
+    this.acc.mult(0);
+  }
   this.show=function(){
     ctx.filStyle="8c8c8c";
     ctx.fillRect(0, 0, 20, 20);
@@ -133,6 +138,7 @@ function loop(){
     p2.show();
   for(var i=0;i<blocks.length;i++){
     blocks[i].fall();
+    blocks[i].update();
     blocks[i].show();
   }
   for(var i=0;i<blocks.length;i++){
