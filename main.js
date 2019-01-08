@@ -45,7 +45,7 @@ function block(x, y){
   this.vel=createVector(0, 0);
   this.acc=createVector(0, 0);
   this.fall=function(){
-    this.applyForce(grav);
+    this.applyForce(grav1);
   }
   this.applyForce=function(f){
     this.acc.add(f);
@@ -95,7 +95,7 @@ function Vector(x, y){
   }
 }
 setTimeout(setup,50);
-var c,ctx,p1,p2,grav,blocks;
+var c,ctx,p1,p2,grav,grav1,blocks;
 function setup(){
   c=document.getElementById("c");
   c.width=window.innerWidth;
@@ -107,6 +107,7 @@ function setup(){
   p2=new Player(c.width-20, c.height-20, "#0000FF");
   blocks=[];
   grav=createVector(0, 0.2);
+  grav1=createVector(0, 0.075);
   loop();
 }
 function loop(){
