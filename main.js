@@ -20,7 +20,7 @@ function Player(x, y, col){
       this.pos.x+=1.5;
   }
   this.collisionTestBlocks=function(b){
-    if(this.pos.x-20>b.pos.x&&this.pos.x<b.pos.x+20&&this.pos.y-20<b.pos.y&&this.pos.y>b.pos.y+20)
+    if(this.pos.x-20>b.pos.x&&this.pos.x<b.pos.x+20&&this.pos.y-20>b.pos.y&&this.pos.y<b.pos.y+20)
       this.dead=true;
   }
   this.applyForce=function(f){
